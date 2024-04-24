@@ -1,0 +1,38 @@
+@use 'base/variables' as v ;
+@use 'base/mixins'  as m;
+
+.footer {
+    padding: 3rem 0;
+    background-color: v.$gris;
+    border-bottom: .5rem solid v.$primario;
+
+    &__grid {
+        @include m.tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include m.desktop {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 0;
+
+        @include m.desktop {
+            margin: 0;
+        }
+
+        &--marca {
+            display: block;
+            @include m.tablet {
+                display: inline;
+            }
+        }
+    }
+}
